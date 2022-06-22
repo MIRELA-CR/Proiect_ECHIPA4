@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello from Spring</title>
+</head>
+<body>
+<h1>Hello from Spring Boot</h1>
+<p>Hello World</p>
+<p th:text="${greetings}"></p>
+<p th:text="${mytext}"></p>
+
+<div th:each = "oras: ${orase}">
+    <p th:text="${oras}"></p>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <td>Descriere</td>
+        <td>Pret bilet</td>
+        <td>Nume director</td>
+    </tr>
+
+    </thead>
+    <tbody>
+    <tr th:each = "muzeu : ${listaMuzee}">
+        <td th:text="${muzeu.desc}"/>
+        <td th:text="${muzeu.bilet}"/>
+        <td th:text="${muzeu.nume}"/>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

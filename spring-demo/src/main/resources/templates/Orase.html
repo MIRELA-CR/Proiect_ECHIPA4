@@ -19,10 +19,10 @@
     </thead>
 
     <tbody>
-    <tr th:each = "oras : ${listaOrase}">
-        <td th:text="${Orase.city}"/>
-        <td th:text="${Orase.country}"/>
-        <td th:text="${Orase.totalMuseums}"/>
+    <tr th:each = "oras: ${listaOrase}">
+        <td th:text="${oras.city}"/>
+        <td th:text="${oras.country}"/>
+        <td th:text="${oras.totalMuseums}"/>
     </tr>
     </tbody>
 </table>

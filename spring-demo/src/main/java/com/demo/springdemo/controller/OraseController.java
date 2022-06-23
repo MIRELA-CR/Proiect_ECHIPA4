@@ -1,11 +1,13 @@
 package com.demo.springdemo.controller;
 
 import com.demo.springdemo.model.Orase;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
+@Controller
 public class OraseController {
     @GetMapping(value = "/Orase")
     public String initO(Model model){

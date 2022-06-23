@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Museums</title>
+</head>
+
+<body>
+<h1>Best museums around the world</h1>
+<p>This is a list of the greatest, most visited museums from all around the world.</p>
+
+<table>
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Address</td>
+    <td>No. of visitors</td>
+    <td>Type</td>
+    <td>City</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr th:each = "muzeu : ${listaMuzee}">
+    <td th:text="${muzeu.name}"/>
+    <td th:text="${muzeu.address}"/>
+    <td th:text="${muzeu.visitor}"/>
+    <td th:text="${muzeu.type}"/>
+    <td th:text="${muzeu.city}"/>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

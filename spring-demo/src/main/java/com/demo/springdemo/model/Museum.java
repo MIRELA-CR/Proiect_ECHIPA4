@@ -1,5 +1,5 @@
 package com.demo.springdemo.model;
-public class Muzee {
+public class Museum {
     private String name;
     private String address;
     private int visitor;
@@ -7,7 +7,7 @@ public class Muzee {
     private String city;
 
 
-    public Muzee(String name, String address, int visitor, String type, String city) {
+    public Museum(String name, String address, int visitor, String type, String city) {
         this.name = name;
         this.address = address;
         this.visitor = visitor;

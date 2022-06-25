@@ -1,11 +1,11 @@
 package com.demo.springdemo.model;
 
-public class Orase {
+public class City {
     private String city;
     private String country;
     private int totalMuseums;
 
-    public Orase(String city, String country, int totalMuseums) {
+    public City(String city, String country, int totalMuseums) {
         this.city = city;
         this.country = country;
         this.totalMuseums = totalMuseums;

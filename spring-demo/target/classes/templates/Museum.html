@@ -19,11 +19,22 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="http://localhost:8080/Index">Index</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:8080/City">Cities</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:8080/Museum">Museums</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cities
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="http://localhost:8080/City">City Database</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/FormC">Add a new city</a></li>
+          </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Museums
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="http://localhost:8080/Museum">Museums Database</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/FormM">Add a new museum</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -43,9 +54,9 @@
           <tr>
             <td>Name</td>
             <td>Address</td>
-            <td>No. of visitors</td>
-            <td>Type</td>
             <td>City</td>
+            <td>Type</td>
+            <td>No. of visitors</td>
           </tr>
           </thead>
 
@@ -53,22 +64,25 @@
           <tr th:each = "museum : ${museumList}">
             <td th:text="${museum.name}"/>
             <td th:text="${museum.address}"/>
-            <td th:text="${museum.visitor}"/>
-            <td th:text="${museum.type}"/>
             <td th:text="${museum.city}"/>
+            <td th:text="${museum.type}"/>
+            <td th:text="${museum.visitor}"/>
           </tr>
           </tbody>
         </table>
       </div>
 
       <div class="col-md-4 col-sx-12 sidebar">
-
         <select class="form-select" aria-label="Default select example">
           <option selected="">Choose a city</option>
           <option value="1">Beijing</option>
           <option value="2">London</option>
-          <option value="3">Paris</option>
-          <option value="4">Washington DC</option>
+          <option value="3">New York City</option>
+          <option value="4">Paris</option>
+          <option value="5">Rome</option>
+          <option value="6">Shanghai</option>
+          <option value="7">Taipei</option>
+          <option value="8">Washington DC</option>
         </select>
         <p>The purpose of modern museums is to collect, preserve, interpret, and display objects of artistic, cultural, or scientific significance for the study and education of the public. From a visitor or community perspective, this purpose can also depend on one's point of view. A trip to a local history museum or large city art museum can be an entertaining and enlightening way to spend the day. To city leaders, an active museum community can be seen as a gauge of the cultural or economic health of a city, and a way to increase the sophistication of its inhabitants. To a museum professional, a museum might be seen as a way to educate the public about the museum's mission, such as civil rights or environmentalism. Museums are, above all, storehouses of knowledge. In 1829, James Smithson's bequest, that would fund the Smithsonian Institution, stated he wanted to establish an institution "for the increase and diffusion of knowledge".</p>
         <img src="img/map.png" class="img-fluid" alt="Museums Map">

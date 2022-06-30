@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cities</title>
-
+    <title>Add a City</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navigation</a>
@@ -43,45 +43,8 @@
 </nav>
 
 
-<div styles="max-width: 1200px; margin 0 auto; padding: 10px;">
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-8 col-xs-12 content">
-                <h1>Cities with the most museums in the world</h1>
-                <table class="table">
-                    <thead class="table-dark">
-                    <tr>
-                        <td>City</td>
-                        <td>Country</td>
-                        <td>No. of Museums</td>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr th:each = "city: ${cityList}">
-                        <td th:text="${city.city}"/>
-                        <td th:text="${city.country}"/>
-                        <td th:text="${city.totalMuseums}"/>
-                    </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div class="col-md-4 col-sx-12 sidebar">
-                <label for="customRange" class="form-label">Filter by the number of museums</label>
-                <input type="range" class="form-range" min="0" max="300" id="customRange">
-
-                <p>Some of the best trips include a day or more spent deep inside the halls of a museum. It's in these often grand buildings (which are impressive in their own right) that travelers can find masterpieces by artists like Monet and artifacts that showcase a destination's culture and history. And while museums are largely subjective — some visitors love art, while others are fascinated by science — the numbers don't lie.</p>
-                <img th:src="@{/img/museum.jpg}" class="img-fluid" alt="Museum">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
+
 </html>

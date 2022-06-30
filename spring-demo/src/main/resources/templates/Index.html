@@ -20,16 +20,28 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="http://localhost:8080/Index">Index</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/City">Cities</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/Museum">Museums</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cities
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://localhost:8080/City">City Database</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/FormC">Add a new city</a></li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Museums
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://localhost:8080/Museum">Museums Database</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/FormM">Add a new museum</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 
 <div styles="max-width: 1200px; margin 0 auto; padding: 10px;">
@@ -41,7 +53,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Cities</h5>
-                        <p class="card-text">Click here to find out what are the 15 most visited cities from all around the world, discover which one is home for the most cultural exhibitions and what is their exact number of museums!</p>
+                        <p class="card-text">Click here to find out what are the 20 most visited cities from all around the world, discover which one is home for the most cultural exhibitions and what is their exact number of museums!</p>
                         <a href="http://localhost:8080/City" class="btn btn-dark">Go</a>
                     </div>
                 </div>

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cities</title>
-
+    <title>Add a Museum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-
 <body>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navigation</a>
@@ -42,46 +41,64 @@
     </div>
 </nav>
 
-
-<div styles="max-width: 1200px; margin 0 auto; padding: 10px;">
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-8 col-xs-12 content">
-                <h1>Cities with the most museums in the world</h1>
-                <table class="table">
-                    <thead class="table-dark">
-                    <tr>
-                        <td>City</td>
-                        <td>Country</td>
-                        <td>No. of Museums</td>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr th:each = "city: ${cityList}">
-                        <td th:text="${city.city}"/>
-                        <td th:text="${city.country}"/>
-                        <td th:text="${city.totalMuseums}"/>
-                    </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div class="col-md-4 col-sx-12 sidebar">
-                <label for="customRange" class="form-label">Filter by the number of museums</label>
-                <input type="range" class="form-range" min="0" max="300" id="customRange">
-
-                <p>Some of the best trips include a day or more spent deep inside the halls of a museum. It's in these often grand buildings (which are impressive in their own right) that travelers can find masterpieces by artists like Monet and artifacts that showcase a destination's culture and history. And while museums are largely subjective — some visitors love art, while others are fascinated by science — the numbers don't lie.</p>
-                <img th:src="@{/img/museum.jpg}" class="img-fluid" alt="Museum">
-            </div>
+<center>
+<form class="row g-3 needs-validation was-validated" novalidate="">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Museum</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Enter museum name" required="">
+        <div class="valid-feedback">
+            Looks good!
         </div>
-
     </div>
-</div>
+    <div class="col-md-4">
+        <label for="validationCustom02" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom02" value="Enter city name" required="">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-md-2"></div>
 
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <label for="validationCustom03" class="form-label">Address</label>
+        <input type="text" class="form-control" id="validationCustom03" required="">
+        <div class="invalid-feedback">
+            Please provide a valid address.
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label for="validationCustom04" class="form-label">Type of museum</label>
+        <select class="form-select" id="validationCustom04" required="">
+            <option selected="" disabled="" value="">Choose...</option>
+            <option value="1">Art</option>
+            <option value="2">History</option>
+            <option value="3">Natural History</option>
+            <option value="4">Science</option>
+            <option value="5">Sculpture</option>
+        </select>
+        <div class="invalid-feedback">
+            Please select a valid type.
+        </div>
+    </div>
+    <div class="col-md-2">
+        <label for="validationCustom05" class="form-label">Number of visitors</label>
+        <input type="text" class="form-control" id="validationCustom05" required="">
+        <div class="invalid-feedback">
+            Please provide a valid number.
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-12">
+    </div>
+    <div class="col-12">
+        <button class="btn btn-dark" type="submit">Submit form</button>
+    </div>
+</form>
+</center>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 </body>
 </html>

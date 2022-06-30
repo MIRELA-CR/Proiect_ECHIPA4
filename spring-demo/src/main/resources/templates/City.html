@@ -20,16 +20,28 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="http://localhost:8080/Index">Index</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/City">Cities</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/Museum">Museums</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Cities
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://localhost:8080/City">City Database</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/FormC">Add a new city</a></li>
+                    </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Museums
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="http://localhost:8080/Museum">Museums Database</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/FormM">Add a new museum</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <div styles="max-width: 1200px; margin 0 auto; padding: 10px;">
     <div class="container-fluid">
@@ -62,16 +74,12 @@
                 <input type="range" class="form-range" min="0" max="300" id="customRange">
 
                 <p>Some of the best trips include a day or more spent deep inside the halls of a museum. It's in these often grand buildings (which are impressive in their own right) that travelers can find masterpieces by artists like Monet and artifacts that showcase a destination's culture and history. And while museums are largely subjective — some visitors love art, while others are fascinated by science — the numbers don't lie.</p>
-                <img src="img/museum.jpg" class="img-fluid" alt="Museum">
+                <img th:src="@{/img/museum.jpg}" class="img-fluid" alt="Museum">
             </div>
         </div>
 
     </div>
 </div>
-
-
-
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

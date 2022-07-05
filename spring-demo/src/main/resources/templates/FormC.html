@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,23 +18,23 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/Index">Index</a>
+                    <a class="nav-link active" aria-current="page" href="/Index">Index</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Cities
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="http://localhost:8080/City">City Database</a></li>
-                        <li><a class="dropdown-item" href="http://localhost:8080/FormC">Add a new city</a></li>
+                        <li><a class="dropdown-item" href="/City">City Database</a></li>
+                        <li><a class="dropdown-item" href="/FormC">Add a new city</a></li>
                     </ul>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Museums
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="http://localhost:8080/Museum">Museums Database</a></li>
-                        <li><a class="dropdown-item" href="http://localhost:8080/FormM">Add a new museum</a></li>
+                        <li><a class="dropdown-item" href="/Museum">Museums Database</a></li>
+                        <li><a class="dropdown-item" href="/FormM">Add a new museum</a></li>
                     </ul>
                 </li>
             </ul>
@@ -42,6 +42,42 @@
     </div>
 </nav>
 
+<form th:action="@{/submitC}" th:object="${city}" method="post" class="row g-3 needs-validation was-validated" novalidate="">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <label for="validationCustom01" class="form-label">City</label>
+        <input type="text" class="form-control" id="validationCustom01" value="Enter city name" required="" th:field="${city.city}">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <label for="validationCustom02" class="form-label">Country</label>
+        <input type="text" class="form-control" id="validationCustom02" value="Enter country name" required="" th:field="${city.country}">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <label for="validationCustom03" class="form-label">Number of museums</label>
+        <div class="input-group has-validation">
+            <input type="number" class="form-control" id="validationCustom03" aria-describedby="inputGroupPrepend" required="" th:field="${city.totalMuseums}">
+            <div class="invalid-feedback">
+                Please enter a valid number.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+    <center>
+        <button class="btn btn-dark" type="submit">Submit form</button>
+    </center>
+</form>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 

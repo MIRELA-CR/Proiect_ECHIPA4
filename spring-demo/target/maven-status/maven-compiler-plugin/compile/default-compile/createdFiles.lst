@@ -1,5 +1,8 @@
-com\demo\springdemo\controller\OraseController.class
-com\demo\springdemo\model\Muzee.class
-com\demo\springdemo\model\Orase.class
+com\demo\springdemo\controller\MuseumController.class
+com\demo\springdemo\controller\CityController.class
 com\demo\springdemo\SpringDemoApplication.class
-com\demo\springdemo\controller\MuzeeController.class
+com\demo\springdemo\model\Museum.class
+com\demo\springdemo\controller\IndexController.class
+com\demo\springdemo\model\City.class
+com\demo\springdemo\repository\MuseumRepository.class
+com\demo\springdemo\repository\CityRepository.class

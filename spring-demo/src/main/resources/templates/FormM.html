@@ -70,7 +70,7 @@
     </div>
     <div class="col-md-2">
         <label for="validationCustom04" class="form-label">Type of museum</label>
-        <select class="form-select" id="validationCustom04" required="">
+        <select  th:field="${museum.type}"class="form-select" id="validationCustom04" required="">
             <option selected="" disabled="" value="">Choose...</option>
             <option value="1">Art</option>
             <option value="2">History</option>

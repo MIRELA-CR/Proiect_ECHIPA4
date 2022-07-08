@@ -1,15 +1,13 @@
 package com.demo.springdemo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.aspectj.lang.annotation.control.CodeGenerationHint;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -30,3 +28,4 @@ public class City {
     private int totalMuseums;
 
 }
+

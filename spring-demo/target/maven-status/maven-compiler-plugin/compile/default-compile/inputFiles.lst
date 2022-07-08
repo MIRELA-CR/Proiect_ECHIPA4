@@ -1,5 +1,8 @@
-C:\Users\Mirela\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\controller\MuzeeController.java
-C:\Users\Mirela\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\controller\OraseController.java
-C:\Users\Mirela\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\SpringDemoApplication.java
-C:\Users\Mirela\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\model\Muzee.java
-C:\Users\Mirela\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\model\Orase.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\controller\CityController.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\model\Museum.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\model\City.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\repository\CityRepository.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\controller\IndexController.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\controller\MuseumController.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\SpringDemoApplication.java
+C:\Users\Ionut\IdeaProjects\Proiect_ECHIPA4\spring-demo\src\main\java\com\demo\springdemo\repository\MuseumRepository.java

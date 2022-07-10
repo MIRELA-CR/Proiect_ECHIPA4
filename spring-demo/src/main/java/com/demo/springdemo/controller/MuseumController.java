@@ -2,6 +2,7 @@ package com.demo.springdemo.controller;
 
 import com.demo.springdemo.model.City;
 import com.demo.springdemo.model.Museum;
+import com.demo.springdemo.repository.CityRepository;
 import com.demo.springdemo.repository.MuseumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +16,10 @@ import java.util.List;
 @Controller
 public class MuseumController {
     @Autowired
-
     MuseumRepository museumRepository;
+
+    @Autowired
+    CityRepository cityRepository;
 
     @GetMapping(value = "/Museum")
     public String initM(Model model){
@@ -45,18 +48,20 @@ public class MuseumController {
     public String initFM(Model model){
         Museum museum = new Museum();
         model.addAttribute("museum", museum);
+
+        List<City> cityList = cityRepository.findAll();
+        model.addAttribute("cityList", cityList);
+
+
+
         return "FormM";
     }
 
     @PostMapping(value = "/submitM")
-    public String submitC(@ModelAttribute Museum museum){
+    public String submitM(@ModelAttribute Museum museum,Model model){
         System.out.println("Museum added!");
-        saveMuseum(museum);
-        return "Index";
-    }
-
-    private void saveMuseum(Museum museum) {
         museumRepository.save(museum);
+        return "redirect:/Museum";
     }
 
 }

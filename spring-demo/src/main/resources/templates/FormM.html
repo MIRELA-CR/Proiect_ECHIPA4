@@ -52,11 +52,11 @@
         </div>
     </div>
     <div class="col-md-4">
-        <label for="validationCustom02" class="form-label">City</label>
-        <input th:field="${museum.city}" type="text" class="form-control" id="validationCustom02" value="Enter city name" required="" >
-        <div class="valid-feedback">
-            Looks good!
-        </div>
+        <label class="form-label">City</label>
+        <select th:field="${museum.city.id}" class="form-select" required="" >
+            <option th:each="city : ${cityList}" th:value="${city.id}" th:text="${city.name}"></option>
+        </select>
+
     </div>
     <div class="col-md-2"></div>
 
@@ -69,14 +69,13 @@
         </div>
     </div>
     <div class="col-md-2">
-        <label for="validationCustom04" class="form-label">Type of museum</label>
-        <select  th:field="${museum.type}"class="form-select" id="validationCustom04" required="">
-            <option selected="" disabled="" value="">Choose...</option>
-            <option value="1">Art</option>
-            <option value="2">History</option>
-            <option value="3">Natural History</option>
-            <option value="4">Science</option>
-            <option value="5">Sculpture</option>
+        <label class="form-label">Type of museum</label>
+        <select  th:field="${museum.type}"class="form-select" required="">
+            <option value="Art" text="${museum.type}">Art</option>
+            <option value="History" text="${museum.type}">History</option>
+            <option value="Natural History" text="${museum.type}">Natural History</option>
+            <option value="Science" text="${museum.type}">Science</option>
+            <option value="Sculpture" text="${museum.type}">Sculpture</option>
         </select>
         <div class="invalid-feedback">
             Please select a valid type.

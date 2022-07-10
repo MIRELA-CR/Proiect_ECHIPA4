@@ -60,7 +60,7 @@
 
                     <tbody>
                     <tr th:each = "city: ${cityList}">
-                        <td th:text="${city.city}"/>
+                        <td th:text="${city.name}"/>
                         <td th:text="${city.country}"/>
                         <td th:text="${city.totalMuseums}"/>
                     </tr>
@@ -70,8 +70,8 @@
             </div>
 
             <div class="col-md-4 col-sx-12 sidebar">
-                <label for="customRange" class="form-label">Filter by the number of museums</label>
-                <input type="range" class="form-range" min="0" max="300" id="customRange">
+                <!--<label for="customRange" class="form-label">Filter by the number of museums</label>
+                <input type="range" class="form-range" min="0" max="300" id="customRange">-->
 
                 <p>Some of the best trips include a day or more spent deep inside the halls of a museum. It's in these often grand buildings (which are impressive in their own right) that travelers can find masterpieces by artists like Monet and artifacts that showcase a destination's culture and history. And while museums are largely subjective — some visitors love art, while others are fascinated by science — the numbers don't lie.</p>
                 <img th:src="@{/img/museum.jpg}" class="img-fluid" alt="Museum">

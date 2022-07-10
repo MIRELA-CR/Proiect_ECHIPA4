@@ -17,7 +17,6 @@ public class CityController {
     @Autowired
 
     CityRepository cityRepository;
-
     @GetMapping(value = "/City")
     public String initC(Model model){
 
@@ -55,14 +54,10 @@ public class CityController {
     }
 
     @PostMapping(value = "/submitC")
-    public String submitC(@ModelAttribute City city){
+    public String submitC(@ModelAttribute City city, Model model){
         System.out.println("City added!");
-        saveCity(city);
-        return "Index";
-    }
-
-    private void saveCity(City city) {
         cityRepository.save(city);
+        return "redirect:/City";
     }
 
 

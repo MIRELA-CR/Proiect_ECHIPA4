@@ -29,7 +29,8 @@ public class Museum {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "city")
-    private String city;
+    @ManyToOne
+    @JoinColumn(name="id_city")
+    private City city;
 
 }

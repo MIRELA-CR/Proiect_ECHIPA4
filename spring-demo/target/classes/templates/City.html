@@ -55,6 +55,7 @@
                         <td>City</td>
                         <td>Country</td>
                         <td>No. of Museums</td>
+                        <td>Action</td>
                     </tr>
                     </thead>
 
@@ -63,6 +64,22 @@
                         <td th:text="${city.name}"/>
                         <td th:text="${city.country}"/>
                         <td th:text="${city.totalMuseums}"/>
+                        <td>
+                            <div class="row">
+                                <div class="col-3">
+                                    <form th:action="@{/editC}" th:object="${city}" method="post">
+                                        <input class="d-none" name="cityId" th:value="${city.id}">
+                                        <button class="btn btn-secondary btn-sm">Edit</button>
+                                    </form>
+                                </div>
+                                <div class="col-3">
+                                     <form th:action="@{/deleteC}" th:object="${city}" method="post">
+                                         <input class="d-none" name="cityId" th:value="${city.id}">
+                                         <button class="btn btn-dark btn-sm">Delete</button>
+                                     </form>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

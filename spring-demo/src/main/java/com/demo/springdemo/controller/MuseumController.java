@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -52,8 +53,6 @@ public class MuseumController {
         List<City> cityList = cityRepository.findAll();
         model.addAttribute("cityList", cityList);
 
-
-
         return "FormM";
     }
 
@@ -64,4 +63,19 @@ public class MuseumController {
         return "redirect:/Museum";
     }
 
+    @PostMapping(value= "/editM")
+    public  String editM(@RequestParam("museumId") int id, Model model){
+        Museum museum = museumRepository.findById(id).get();
+        model.addAttribute("museum",museum);
+
+        List<City> cityList = cityRepository.findAll();
+        model.addAttribute("cityList",cityList);
+
+        return "FormM";
+    }
+    @PostMapping(value = "/deleteM")
+    public String deleteM(@RequestParam("museumId") int id){
+        museumRepository.deleteById(id);
+        return "redirect:/Museum";
+    }
 }

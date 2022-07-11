@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -60,5 +61,18 @@ public class CityController {
         return "redirect:/City";
     }
 
+    @PostMapping(value = "/editC")
+    public String editC(@RequestParam("cityId") int id, Model model){
+        City city = cityRepository.findById(id).get();
+        model.addAttribute("city", city);
+
+        return "FormC";
+    }
+
+    @PostMapping(value = "/deleteC")
+    public String deleteC(@RequestParam("cityId") int id){
+        cityRepository.deleteById(id);
+        return "redirect:/City";
+    }
 
 }

@@ -43,6 +43,10 @@
 
 <center>
 <form th:action="@{/submitM}" th:object="${museum}" method="post" class="row g-3 needs-validation was-validated" novalidate="">
+    <div>
+        <input type="text" class="d-none" th:field="${museum.id}" >
+    </div>
+
     <div class="col-md-2"></div>
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Museum</label>
@@ -51,15 +55,16 @@
             Looks good!
         </div>
     </div>
+
     <div class="col-md-4">
+
         <label class="form-label">City</label>
         <select th:field="${museum.city.id}" class="form-select" required="" >
             <option th:each="city : ${cityList}" th:value="${city.id}" th:text="${city.name}"></option>
         </select>
-
     </div>
-    <div class="col-md-2"></div>
 
+    <div class="col-md-2"></div>
     <div class="col-md-2"></div>
     <div class="col-md-4">
         <label for="validationCustom03" class="form-label">Address</label>
@@ -68,6 +73,7 @@
             Please provide a valid address.
         </div>
     </div>
+
     <div class="col-md-2">
         <label class="form-label">Type of museum</label>
         <select  th:field="${museum.type}"class="form-select" required="">
@@ -81,6 +87,7 @@
             Please select a valid type.
         </div>
     </div>
+
     <div class="col-md-2">
         <label for="validationCustom05" class="form-label">Number of visitors</label>
         <input th:field="${museum.visitor}" type="number" class="form-control" id="validationCustom05" required="" >
@@ -88,6 +95,7 @@
             Please provide a valid number.
         </div>
     </div>
+
     <div class="col-md-2"></div>
     <div class="col-12">
     </div>

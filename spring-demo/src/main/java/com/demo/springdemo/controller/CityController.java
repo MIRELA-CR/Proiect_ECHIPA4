@@ -1,7 +1,8 @@
 package com.demo.springdemo.controller;
 
+import com.demo.springdemo.dto.CityDto;
 import com.demo.springdemo.model.City;
-import com.demo.springdemo.repository.CityRepository;
+import com.demo.springdemo.service.CityService;
 import net.bytebuddy.dynamic.DynamicType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,33 +17,13 @@ import java.util.List;
 @Controller
 public class CityController {
     @Autowired
+    CityService cityService;
 
-    CityRepository cityRepository;
     @GetMapping(value = "/City")
     public String initC(Model model){
 
-        /*List<City> cityList = List.of(
-                new City("Paris","France", 297),
-                new City("Moscow","Russia", 261),
-                new City("Los Angeles","USA", 219),
-                new City("Seoul","South Korea", 201),
-                new City("London","UK", 192),
-                new City("Tokyo","Japan",173),
-                new City("Chengdu", "China",150),
-                new City("Amsterdam","The Netherlands",144),
-                new City("New York City", "USA",140),
-                new City("San Francisco","USA",132),
-                new City("Taipei", "Taiwan",131),
-                new City("Shanghai","China",120),
-                new City("Brussels", "Belgium",93),
-                new City("Milan","Italy",90),
-                new City("Stockholm","Sweden",90),
-                new City("Washington DC","USA", 74),
-                new City("Bucharest", "Romania", 60),
-                new City("Beijing","China", 51)
-        );*/
 
-        List<City> cityList = cityRepository.findAll();
+        List<CityDto> cityList = cityService.getAllCities();
         model.addAttribute("cityList", cityList);
 
         return "City";
@@ -57,13 +38,13 @@ public class CityController {
     @PostMapping(value = "/submitC")
     public String submitC(@ModelAttribute City city, Model model){
         System.out.println("City added!");
-        cityRepository.save(city);
+        cityService.saveCity(city);
         return "redirect:/City";
     }
 
     @PostMapping(value = "/editC")
     public String editC(@RequestParam("cityId") int id, Model model){
-        City city = cityRepository.findById(id).get();
+        City city = cityService.getCityById(id);
         model.addAttribute("city", city);
 
         return "FormC";
@@ -71,7 +52,7 @@ public class CityController {
 
     @PostMapping(value = "/deleteC")
     public String deleteC(@RequestParam("cityId") int id){
-        cityRepository.deleteById(id);
+        cityService.deleteCity(id);
         return "redirect:/City";
     }
 
